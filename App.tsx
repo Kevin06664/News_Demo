@@ -1,28 +1,8 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import SplashScreen from './app/Screens/SplashScreen';
-import LoginScreen from './app/Screens/LoginScreen';
-import HomeScreen from './app/Screens/HomeScreen';
-import GameScreen from './app/Screens/GameScreen';
+import { AppNavigator } from './app/navigation/AppNavigator';
 
-const Stack = createStackNavigator();
+const App = () => {
+  return <AppNavigator />;
+};
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator 
-        initialRouteName="SplashScreen"
-        screenOptions={{
-          headerShown: false,
-          cardStyle: { backgroundColor: 'white' }
-        }}
-      >
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="GameScreen" component={GameScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+export default App;
